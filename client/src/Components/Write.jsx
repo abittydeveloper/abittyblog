@@ -10,7 +10,6 @@ const Write = () => {
   });
   const storedString = localStorage.getItem('userToken');
   const storedData = JSON.parse(storedString);
-console.log(storedData._id);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -22,6 +21,7 @@ console.log(storedData._id);
     const { title, categories, content } = formData;
     const senddata = {...formData , "user":storedData._id};
        axios.post('http://localhost:8000/api/blog/addblog' , senddata);
+       console.log(senddata);
     // You can add code here to handle the submission of the blog post data
     // For example, sending it to an API or saving it in your database
     // This depends on your backend setup.

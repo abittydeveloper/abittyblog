@@ -16,11 +16,11 @@ const Channels = () => {
                         Popular Channels
                     </h5>
                 </div>
-                {postdata.slice(0, 5).map((post) => {
+                {postdata.slice(0, 5).map((post,i) => {
                     return (
 
 
-                        <div className="flow-root">
+                        <div className="flow-root" key={i}>
                             <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
                                 <li className="py-3 sm:py-4">
                                     <div className="flex items-center space-x-4">

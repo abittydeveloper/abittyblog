@@ -8,9 +8,8 @@ const blogPostSchema = new mongoose.Schema({
   categories: {
       type: String,
   },
-  categories: {
+  content: {
     type: String,
-    required: true,
   },
   thumbnail: {
     type: String,

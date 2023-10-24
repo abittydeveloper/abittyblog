@@ -10,11 +10,11 @@ const FirstCard = () => {
   return (
     <div className="flex flex-wrap md:gap-12 gap-3 justify-center ">
   {/* Hello world */}
-  {postdata.slice(0,4).map((post)=>{
+  {postdata.slice(0,4).map((post,i)=>{
     return(
 
     
-  <div className="max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <div key={i} className="max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
       <img
         className="rounded-t-lg"

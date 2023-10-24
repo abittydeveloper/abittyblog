@@ -12,7 +12,7 @@ const Blog = () => {
 
   const getdata = async()=>{
     const response = await axios.get('http://localhost:8000/api/blog/getblog');
-    console.log(response.data);
+    // console.log(response.data);
     setPostdata(response.data)
 
   }
@@ -27,22 +27,22 @@ const Blog = () => {
           {postdata.slice(0, 1).map((post, i) => {
             // console.log(post);
             return (
-              <>
+              <div key={i}>
                 <img src={post.thumbnail} className="" />
                 <h2 className='text-4xl pt-3 hover:underline cursor-pointer mb-3 '>{post.title}</h2>
                 <div className='rounded-full mt-2 bg-red-100 px-3 py-1 inline'>{post.categories}</div>
                 <div className='flex mt-5 gap-3 items-center'><img className='' style={{ borderRadius: "50%", width: "40px", height: "40px" }} src={post.user.profile} ></img><div>{post.user.username}</div></div>
 
-              </>
+              </div>
             )
           })}
 
         </div>
         <div className='px-3'>
           <p className="text-2xl border-b-2 border-blue-500 border-solid ">Recent Post</p>
-          {postdata.slice(1, 6).reverse().map((post) => {
+          {postdata.slice(1, 6).reverse().map((post,i) => {
             return (
-              <div className='flex '>
+              <div className='flex ' key={i}>
                 <img src={post.thumbnail} className="mt-3 shrink-0" style={{ width: "150px", height: "75px" }}></img>
                 <div className='ml-2'>
                   <p className="mt-3 hover:underline cursor-pointer">{post.title}</p>
